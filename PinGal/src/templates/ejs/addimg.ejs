@@ -1,0 +1,30 @@
+<%- include('includes/header') -%>
+<link rel="stylesheet" href="/src/css/addimg.css">
+<title>Add Your Post</title>
+
+<section class="form">
+    <div class="form__content">
+        <% if (req.session.user) { %>
+            <form action="/gallery/add" method="post" enctype="multipart/form-data">
+                <label for="title">Заголовок</label>
+                <input type="text" id="title" name="title">
+
+                <label for="description">Описание</label>
+                <textarea id="description" name="description" cols="30" rows="10"></textarea>
+
+                <br>
+                <input type="file" id="image" name="image">
+
+                <input type="submit" value="Добавить картинку" id="submit__btn">
+            </form>
+        <% } else { %>
+            <div class="form__error">
+                <div class="error__content">
+                    <h1>Вы не вошли в систему!</h1>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</section>
+
+<%- include('includes/footer') -%>

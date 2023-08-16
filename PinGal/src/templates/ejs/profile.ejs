@@ -1,0 +1,18 @@
+<%- include('includes/header') -%>
+<title>Профиль пользователя</title>
+
+<section class="profile">
+    <h2>Профиль пользователя</h2>
+    <p>Логин: <%= login %></p>
+    <img src="<%= ico %>" width="120" height="120">
+    <% if (req.session.user && req.session.user.login === login) { %>
+        <form action="/profile/<%= req.session.user.id %>" method="post" enctype="multipart/form-data">
+            <label for="ico">Сменить аватарку</label>
+            <input type="file" id="ico" name="ico">
+            
+            <input type="submit" value="Обновить">
+        </form>
+    <% } %>
+</section>
+
+<%- include('includes/footer') -%>

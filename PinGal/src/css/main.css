@@ -1,0 +1,89 @@
+/* Global Settings */
+
+body, html {
+    font-size: 40px;
+    line-height: normal;
+    background: #F6ECE1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* /Global Settings */
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.header__logo {
+    font-size: 36px;
+    margin: 30px 55px;
+    color: #1F1F1F;
+}
+
+.header__nav {
+    margin: 32px 55px;
+}
+
+.header__nav nav a {
+    margin-right: 150px;
+    font-size: 34px;
+    color: #1F1F1F;
+}
+
+/* /Header */
+
+/* Intro */
+
+.intro {
+    margin-top: 150px;
+    margin-left: 125px;
+}
+
+.intro__content h1 {
+    color: #DC9754;
+}
+
+.intro__content ul li {
+    margin: 25px 0px 15px 45px;
+    color: #EEC093;
+    font-family: 'Inter', sans-serif;font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.intro__content img {
+    float: right;
+    width: 430px;
+    height: 445px;
+    margin: -50px 290px;
+}
+
+/* /Intro */
+
+/* Footer */
+
+.footer {
+    padding-top: 450px;
+}
+
+.footer__content {
+    color: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* /Footer */

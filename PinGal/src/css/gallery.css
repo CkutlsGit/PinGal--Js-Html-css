@@ -1,0 +1,123 @@
+/* Global Settings */
+
+body, html {
+    font-size: 40px;
+    line-height: normal;
+    background: #F6ECE1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* /Global Settings */
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.header__logo {
+    font-size: 36px;
+    margin: 30px 55px;
+    color: #1F1F1F;
+}
+
+.header__nav {
+    margin: 32px 55px;
+}
+
+.header__nav nav {
+    display: flex;
+}
+
+.header__nav nav p {
+    user-select: none;
+}
+
+.header__nav nav a {
+    margin-right: 150px;
+    font-size: 34px;
+    color: #1F1F1F;
+    transition: 0.5s
+}
+
+.header__nav nav a:hover {
+    color: #DC9754;
+}
+
+/* /Header */
+
+/* Intro */
+
+.dont__reg {
+    display: flex;
+    justify-content: center;
+    padding-top: 250px;
+    font-family: 'Inter', sans-serif;font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.dont__reg p {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 15px;
+    color: #DC9754;
+}
+
+.dont__reg a {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+    font-size: 38px;
+    color: #1F1F1F;
+    background: #DC9754;
+    border-radius: 20px;
+    padding: 40px 40px;
+    transition: 0.5s;       
+}
+
+.dont__reg a:hover {
+    color: #d4d41e;
+    background: #1F1F1F;
+}
+
+.gallery__content ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    padding-left: 130px;
+    list-style: none;
+}
+
+.gallery__content ul li {
+    margin-top: 140px;
+    margin-right: 150px;
+    flex-basis: calc(33.33% - 450px);
+    box-sizing: border-box;
+}
+
+.gallery__content ul li a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #DC9754;
+    transition: 0.9s;
+}
+
+.gallery__content ul li a:hover {
+    color: #1F1F1F;
+}
+
+/* /Intro */

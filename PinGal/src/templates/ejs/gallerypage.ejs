@@ -1,0 +1,70 @@
+<%- include('includes/header') -%>
+<title>Pin From <%= galpage.author %></title>
+<header class="header">
+    <div class="header__logo">PinGal</div>
+    <div class="header__nav">
+        <nav>
+            <% if (req.session.user) { %>
+                <a href="/profile/<%= req.session.user.id %>" class="nav__btn">Профиль: <%= req.session.user.login %></a>
+            <% } else { %>
+                <a href="/register">Войти или зарегистрироваться</a>
+            <% } %>
+        </nav>
+    </div>
+</header>
+<% if (req.session.user) { %>
+    <% if (galpage) { %>
+        <section class="intro">
+            <div class="intro__content">
+                <h1><%= galpage.title %></h1>
+                <p><%= galpage.description %></p>
+                <a href="/profile/<%= galpage.author %>">Автор: <%= galpage.author %></a>
+                <% if (galpage.image) { %>
+                    <img src="/src/uploads/<%= galpage.image %>" alt="<%= galpage.title %>">
+                <% } %>
+                <div class="intro__comments">
+                    <h3>Комментарии:</h3>
+                    <% if (comments && comments.length > 0) { %>
+                        <ul>
+                            <% comments.forEach(comment => { %>
+                                <li>
+                                    <% if (req.session.user && req.session.user.login === comment.author) {%>
+                                        <% if (comment.ico) { %>
+                                            <p><img src="/src/uploads/<%= comment.ico %>" width="40" height="40" alt="<%= comment.author %>">
+                                        <% } else { %>
+                                            <p><img src="/path/to/default_avatar.png" width="40" height="40" alt="Default Avatar">
+                                        <% } %>
+                                        <strong><%= comment.author %>:</strong> <%= comment.description %></p>
+                                        <button type="button" onclick="location.href='/delete-comment/<%= comment.id %>'">Удалить комментарий</button>
+                                    <% } else { %>
+                                        <% if (comment.ico) { %>
+                                            <p><img src="/src/uploads/<%= comment.ico %>" width="40" height="40" alt="<%= comment.author %>">
+                                        <% } else { %>
+                                            <p><img src="/path/to/default_avatar.png" width="40" height="40" alt="Default Avatar">
+                                        <% } %>
+                                        <strong><%= comment.author %>:</strong> <%= comment.description %></p>
+                                    <% } %>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    <% } else { %>
+                        <p>Пока здесь нет комментариев.</p>
+                    <% } %>
+                    <% if (req.session.user) { %>
+                        <h4>Добавить комментарий</h4>
+                        <form action="/gallery/post/<%= galpage.id %>" method="post">
+                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                            <button type="submit">Отправить</button>
+                        </form>
+                    <% } %>
+            </div>
+        </section>
+    <% } else { %>
+        <p>Нет такого поста!</p>
+    <% } %>
+<% } else { %>
+    <p>Сперва зарегистрируйтесь!</p>
+<% } %>
+
+
+<%- include('includes/footer') -%>

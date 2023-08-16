@@ -1,0 +1,41 @@
+<%- include('includes/header') -%>
+<link rel="stylesheet" href="/src/css/gallery.css">
+<title>PinGal</title>
+
+<header class="header">
+    <div class="header__logo">PinGal</div>
+    <div class="header__nav">
+        <nav>
+            <% if (req.session.user) { %>
+                <a href="/gallery/add">Добавить свой пост</a>
+                <p>Профиль: <a href="/profile/<%= req.session.user.id %>" class="nav__btn"><%= req.session.user.login %></a></p>
+            <% } else { %>
+                <a href="/register">Войти или зарегистрироваться</a>
+            <% } %>
+        </nav>
+    </div>
+</header>
+<section class="gallery">
+    <div class="gallery__content">
+        <% if (req.session.user) { %>
+            <ul>
+                <% gal.forEach((post) => { %>
+                    <li>
+                        <img src="/src/uploads/<%= post.image %>" alt="<%= post.title %>" width="370" height="370">
+                        <a href="/gallery/post/<%= post.id %>"><%= post.title %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <div class="dont__reg">
+                <div class="dont__reg--content">
+                    <p>Сперва зарегистрируйтесь!</p>
+                    <a href="/register">Войти или зарегистрироваться</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</section>
+
+
+<%- include('includes/footer') -%>

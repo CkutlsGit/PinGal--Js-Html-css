@@ -1,0 +1,97 @@
+/* Global Settings */
+
+body, html {
+    background: #171717;
+    font-size: 40px;
+    line-height: normal;
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* /Global Settings */
+
+/* Auth */
+
+.auth {
+    padding-top: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.auth__content {
+    width: 500px;
+    height: 600px;
+    background: #1B1D24;
+}
+
+.auth__content h1 {
+    color: #F0EC8B;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+}
+
+.auth__content form {
+    margin-top: 50px;
+}
+
+.auth__content form input {
+    display: block;
+    margin-top: 50px;
+}
+
+#login,
+#password {
+    width: 350px;
+    height: 40px;
+    background: #707380;
+    margin-left: 50px;
+    color: #F3F0A2;
+    font-size: 25px;
+}
+
+#login::placeholder,
+#password::placeholder {
+    color: #F0EC8B;
+    padding-left: 25px;
+}
+
+#reg__submit {
+    width: 350px;
+    height: 50px;
+    background: #3C4050;
+    margin-top: 50px;
+    margin-left: 70px;
+    color: #F3F0A2;
+    font-size: 30px;
+}
+
+.auth__content p {
+    color: #F0EC8B;
+    font-size: 25px;
+    margin: 35px 0px 0px 50px;
+}
+
+.auth__btn {
+    color: #707380;
+    text-decoration: underline;
+    font-size: 26px;
+    transition: 0.5s;
+}
+
+.auth__btn:hover {
+    color: #ACA72C;
+    text-decoration: none;
+}
+
+/* /Auth */

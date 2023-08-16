@@ -1,0 +1,35 @@
+<%- include('includes/header') -%>
+<link rel="stylesheet" href="/src/css/main.css">
+<title>Main Page</title>
+
+<header class="header">
+    <div class="header__logo">PinGal</div>
+    <div class="header__nav">
+        <nav>
+            <a href="/gallery">Gallery</a>
+            <% if (req.session.user) { %>
+                <a href="/profile/<%= req.session.user.id %>"><%= req.session.user.login %></a>
+            <% } else { %>
+                <a href="/register" style="font-size: 27px;">Войти или зарегистрироваться</a>
+            <% } %>
+        </nav>
+    </div>
+</header>
+<section class="intro">
+    <div class="intro__content">
+        <img src="/src/img/Wifi.svg" alt="Wifi ICO">
+        <h1>Лучший аналог Pintrest!</h1>
+        <ul>
+            <li>Полностью бесплатно</li>
+            <li>Огромный функционал</li>
+            <li>Никаких ограничений</li>
+        </ul>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer__content">
+        <h2>Made By Ckutls</h2>
+    </div>
+</footer>
+
+<%- include('includes/footer') -%>
